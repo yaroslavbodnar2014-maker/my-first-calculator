@@ -1,0 +1,112 @@
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    align-items: center;
+    background: linear-gradient(320deg, #eb92be, #ffef78, #63c9b4);
+    display: flex;
+    font-family: "Dosis", sans-serif;
+    font-display: swap;
+    height: 100%;
+    justify-content: center;
+}
+
+/* Основна панель калькулятора */
+.calculator {
+    background: rgba(255, 255, 255, 0.30);
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+    color: #232323;
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+
+    flex-basis: 400px;
+    height: 540px;
+    padding: 25px;
+    /* Рівномірні відступи з усіх боків */
+
+    /* Робимо панель флекс-контейнером, щоб елементи росли всередині */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Відступ між екраном та рядками кнопок */
+}
+
+/* Заголовок калькулятора */
+h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #232323;
+    font-weight: 600;
+}
+
+/* Екран (розтягнутий по ширині) */
+.screen {
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    width: 100%;
+    height: 80px;
+    border-radius: 8px;
+    padding: 0 20px;
+    font-size: 2.2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Рядки з кнопками (розтягуються по всій висоті та ширині, що залишилися) */
+.calc-row {
+    display: flex;
+    gap: 12px;
+    /* Відступи між кнопками в одному рядку */
+    flex: 1;
+    /* Змушує кожен рядок рівномірно займати вертикальний простір */
+    width: 100%;
+}
+
+/* Стиль для кожної кнопки */
+.calc-button {
+    flex: 1;
+    /* Кожна кнопка займає однакову ширину в рядку */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: #232323;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ефект при наведенні та натисканні на кнопки */
+.calc-button:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.calc-button:active {
+    transform: scale(0.95);
+}
+
+/* Потрійна кнопка "0" (займає більше місця в останньому рядку) */
+.calc-button.triple {
+    flex: 2;
+    /* Займає вдвічі більше місця, ніж інші кнопки в цьому рядку */
+}
